@@ -1,11 +1,11 @@
-import React , {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 
 const Navbar = () => {
 
-  function animation(){
+  function animation() {
     var tabsNewAnim = $('#navbarSupportedContent');
     var activeItemNewAnim = tabsNewAnim.find('.active');
     var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
@@ -13,12 +13,12 @@ const Navbar = () => {
     var itemPosNewAnimTop = activeItemNewAnim.position();
     var itemPosNewAnimLeft = activeItemNewAnim.position();
     $(".hori-selector").css({
-      "top":itemPosNewAnimTop.top + "px", 
-      "left":itemPosNewAnimLeft.left + "px",
+      "top": itemPosNewAnimTop.top + "px",
+      "left": itemPosNewAnimLeft.left + "px",
       "height": activeWidthNewAnimHeight + "px",
       "width": activeWidthNewAnimWidth + "px"
     });
-    $("#navbarSupportedContent").on("click","li",function(e){
+    $("#navbarSupportedContent").on("click", "li", function (e) {
       $('#navbarSupportedContent ul li').removeClass("active");
       $(this).addClass('active');
       var activeWidthNewAnimHeight = $(this).innerHeight();
@@ -26,8 +26,8 @@ const Navbar = () => {
       var itemPosNewAnimTop = $(this).position();
       var itemPosNewAnimLeft = $(this).position();
       $(".hori-selector").css({
-        "top":itemPosNewAnimTop.top + "px", 
-        "left":itemPosNewAnimLeft.left + "px",
+        "top": itemPosNewAnimTop.top + "px",
+        "left": itemPosNewAnimLeft.left + "px",
         "height": activeWidthNewAnimHeight + "px",
         "width": activeWidthNewAnimWidth + "px"
       });
@@ -35,80 +35,83 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    
+
     animation();
-    $(window).on('resize', function(){
-      setTimeout(function(){ animation(); }, 500);
+    $(window).on('resize', function () {
+      setTimeout(function () { animation(); }, 500);
     });
-    
+
   }, []);
 
   return (
-  <nav className="navbar navbar-expand-lg navbar-mainbg nav-flex">
-    
-      <NavLink className="navbar-brand navbar-logo" to="/" exact>
-        Web Solutions
+    <nav className="navbar navbar-expand-lg navbar-mainbg ms-auto">
+      <NavLink className="navbar-brand navbar-logo ms-auto" to="/" exact>
+        Xark
       </NavLink>
-    
-    
-      <button 
+      <button
         className="navbar-toggler"
-        onClick={ function(){
-          setTimeout(function(){ animation(); });
+        onClick={function () {
+          setTimeout(function () { animation(); });
         }}
         type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i className="fas fa-bars text-white"></i>
       </button>
- 
-      <div 
+      <div
         className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-auto">
-            
-            <div className="hori-selector">
-              <div className="left"></div>
-              <div className="right"></div>
-            </div>
-            
-            <li className="nav-item active">
-              <NavLink className="nav-link" to="/" exact>
-                <i 
+        <ul className="navbar-nav ms-auto ">
+
+          <div className="hori-selector">
+            <div className="left"></div>
+            <div className="right"></div>
+          </div>
+
+          <li className="nav-item active ">
+            <NavLink className="nav-link" to="/" exact>
+              <i
                 className="fas fa-tachometer-alt">
-                </i>Home
-              </NavLink>
-            </li>
+              </i>Home
+            </NavLink>
+          </li>
 
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about" exact>
-                <i 
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/about" exact>
+              <i
                 className="far fa-address-book">
-                </i>About
-              </NavLink> 
-            </li>
+              </i>About
+            </NavLink>
+          </li>
 
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/service" exact>
-                <i 
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/Projects" exact>
+              <i
                 className="far fa-clone">
-                </i>Services
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/testimonial" exact>
-                <i 
+              </i>Projects
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/Works" exact>
+              <i
+                className="far fa-clone">
+              </i>Works
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/Testimonals" exact>
+              <i
                 className="far fa-chart-bar">
-                </i>Testimonial
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/contact" exact>
-                <i 
+              </i>Testimonials
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/contact" exact>
+              <i
                 className="far fa-copy">
-                </i>Contact Us
-              </NavLink>
-            </li>
+              </i>Contact Us
+            </NavLink>
+          </li>
         </ul>
       </div>
-  </nav>
+    </nav>
   )
 }
 export default Navbar;

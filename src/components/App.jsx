@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from "../pages/Home/home";
-import{Routes,Route,Redirect,} from 'react-router-dom'
+import{BrowserRouter as Router,Routes,Route,} from 'react-router-dom'
 import About from "../pages/About/about";
 import Contact from "../pages/Contact/contact";
 import Projects from "../pages/Projects/projects";

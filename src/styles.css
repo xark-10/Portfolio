@@ -151,3 +151,10 @@ i {
     left: -25px;
   }
 }
+
+.homeImg{
+  height: 20%;
+  width: 40%;
+  padding-top: 100px;
+  padding-left: 50px;
+}

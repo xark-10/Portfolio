@@ -44,7 +44,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-mainbg ms-auto">
+    <nav className="navbar navbar-expand-lg navbar-mainbg  ms-auto">
       <NavLink className="navbar-brand navbar-logo ms-auto" to="/" exact>
         Xark
       </NavLink>

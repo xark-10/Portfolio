@@ -14,7 +14,7 @@ i {
 }
 .navbar-logo {
   font-weight: 900;
-  font-size: 22px;
+  font-size: 21px;
   font-family: 'Anton', sans-serif;
   padding: 15px;
   color: #000000;
@@ -152,9 +152,34 @@ i {
   }
 }
 
-.homeImg{
-  height: 20%;
-  width: 40%;
-  padding-top: 100px;
-  padding-left: 50px;
+
+
+@media (min-width: 1025px) and (max-width: 1500px){ 
+  .homeImg{
+    height: 30%;
+    width: 50%;
+    padding-top: 10rem;
+    padding-left: 7rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1075px){ 
+  .homeImg{
+    height: 50rem;
+    width: 50rem;
+    padding-top: 10rem;
+    padding-left: 0rem;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .homeImg{
+    height: 50rem;
+    width: 50rem;
+    padding-top: 10rem;
+    padding-left: 0rem;
+  }
 }
